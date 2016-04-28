@@ -1,0 +1,24 @@
+{
+  "name": "instanode",
+  "version": "1.0.0",
+  "description": "Intagram api package ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SLedunois/instanode.git"
+  },
+  "keywords": [
+    "Instagram",
+    "API",
+    "NodeJS"
+  ],
+  "author": "Simon LEDUNOIS <simon.ledunois@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SLedunois/instanode/issues"
+  },
+  "homepage": "https://github.com/SLedunois/instanode"
+}
