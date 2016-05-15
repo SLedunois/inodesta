@@ -1,1 +1,2 @@
-# instanode
+# Inodesta
+Instagram nodeJS API Package
