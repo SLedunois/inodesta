@@ -1,10 +1,12 @@
 {
   "name": "instanode",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Intagram api package ",
-  "main": "index.js",
+  "main": "lib/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*.js",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
+
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,17 @@
   "bugs": {
     "url": "https://github.com/SLedunois/instanode/issues"
   },
-  "homepage": "https://github.com/SLedunois/instanode"
+  "homepage": "https://github.com/SLedunois/instanode",
+  "devDependencies": {
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.3",
+    "mocha": "",
+    "should": ""
+  },
+  "dependencies": {
+    "request": ">= 2.67.0"
+  },
+  "engines": {
+    "node": ">=v0.6.0"
+  }
 }
