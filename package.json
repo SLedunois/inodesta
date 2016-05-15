@@ -1,7 +1,7 @@
 {
-  "name": "instanode",
+  "name": "inodesta",
   "version": "0.0.1",
-  "description": "Intagram api package ",
+  "description": "Instagram api package ",
   "main": "lib/main.js",
   "scripts": {
     "test": "mocha test/*.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/SLedunois/instanode.git"
+    "url": "https://github.com/SLedunois/inodesta.git"
   },
   "keywords": [
     "Instagram",
@@ -20,19 +20,16 @@
   "author": "Simon LEDUNOIS <simon.ledunois@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SLedunois/instanode/issues"
+    "url": "https://github.com/SLedunois/inodesta/issues"
   },
-  "homepage": "https://github.com/SLedunois/instanode",
+  "homepage": "https://github.com/SLedunois/inodesta",
   "devDependencies": {
-    "coveralls": "^2.11.9",
-    "istanbul": "^0.4.3",
+    "coveralls": "",
+    "istanbul": "",
     "mocha": "",
     "should": ""
   },
   "dependencies": {
     "request": ">= 2.67.0"
-  },
-  "engines": {
-    "node": ">=v0.6.0"
   }
 }
