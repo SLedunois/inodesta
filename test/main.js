@@ -15,9 +15,9 @@ var params = {
 var should = require('should');
 var inodesta = require('../lib/main').inodesta(params);
 
-describe('get oAuth access tocken', function () {
+describe('get the uri needs to authorize the application', function () {
     it('returns a string containing the access token url', function () {
-        var result = inodesta.oAuth.getUrlAccessToken();
+        var result = inodesta.oAuth.getAccessTokenUri();
         result.should.eql("https://api.instagram.com/oauth/authorize/?client_id=client_id&redirect_uri=redirect_uri&response_type=code");
     });
 });
