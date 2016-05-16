@@ -2,20 +2,22 @@
  * Created by SLedunois on 01/05/2016.
  */
 
+/**
+ * Json Object containing the app params
+ * @type {{client_id: string, client_secret: string, redirect_uri: string}}
+ */
+var params = {
+    "client_id": "client_id",
+    "client_secret": "client_secret",
+    "redirect_uri": "redirect_uri"
+};
+
 var should = require('should');
-var instanode = require('../lib/main').instanode();
+var inodesta = require('../lib/main').inodesta(params);
 
-
-describe('test', function() {
-    it('returns an empty array', function () {
-        var result = instanode.test();
-        result.should.eql([]);
-    });
-});
-
-describe('testBis', function() {
-    it('return a Hello word for testBis', function () {
-        var result = instanode.testbis();
-        result.should.eql('Hello');
+describe('get oAuth access tocken', function () {
+    it('returns a string containing the access token url', function () {
+        var result = inodesta.oAuth.getUrlAccessToken();
+        result.should.eql("https://api.instagram.com/oauth/authorize/?client_id=client_id&redirect_uri=redirect_uri&response_type=code");
     });
 });

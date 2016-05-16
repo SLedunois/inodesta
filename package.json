@@ -5,8 +5,8 @@
   "main": "lib/main.js",
   "scripts": {
     "test": "mocha test/*.js",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
-
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "deploy": "rm -rf /Users/utilisateur/node_modules/inodesta && cp -R ../inodesta /Users/utilisateur/node_modules"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,11 @@
     "should": ""
   },
   "dependencies": {
-    "request": ">= 2.67.0"
+    "crypto": "0.0.3",
+    "http": "0.0.0",
+    "https": "^1.0.0",
+    "query": "^0.2.0",
+    "request": ">= 2.67.0",
+    "url": "^0.11.0"
   }
 }
