@@ -10,6 +10,7 @@ var params = {
     "client_id": "client_id",
     "client_secret": "client_secret",
     "redirect_uri": "redirect_uri",
+    "user_code" : "user_code",
     "access_token" : "access_token",
     "user_id" : "123456789",
     "returned_status_code" : 400
@@ -23,6 +24,15 @@ describe('#oAuth.getAuthorizeUri()', function () {
         var result = inodesta.oAuth.getAuthorizeUri();
         result.should.eql("https://api.instagram.com/oauth/authorize/?client_id=client_id&redirect_uri=redirect_uri&response_type=code");
     });
+});
+
+describe('#oAuth.getAccessToken(code, callback)', function() {
+  it('Returns an object containing user access token.', function(done) {
+    inodesta.oAuth.getAccessToken(params.user_code, function(result) {
+      result.should.be.type('object').have.property('code', params.returned_status_code);
+      done();
+    });
+  });
 });
 
 describe('#user.getSelfUserInfo(access_token, callback)', function() {
