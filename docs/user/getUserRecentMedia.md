@@ -140,11 +140,12 @@
         "location": null
     },
    ]
-}```
+}
+```
  
 * **Error Response:**
 	Returns an object containing a status code and an error.
-
+	
 ```
 {
 	"meta": {
