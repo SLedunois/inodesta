@@ -1,4 +1,4 @@
-**media.getMedia()**
+**media.getMediaShortCode()**
 ----
 
 * **Method:**
@@ -11,20 +11,20 @@
 *  **Parameters:**
 
 	```
-	media.getMedia(accessToken, mediaId, callback)
+	media.getMedia(accessToken, shortcode, callback)
 	```
 
    **Required:**
  
    `accessToken=[string]` : *a valid access token.*
 
-   `mediaId=[string]` : *a valid media id.*
+   `shortcode=[string]` : *a valid shortcode.*
    
    `callback=[function]` : *request callback.*   
 
 * **Success Response:**
 	
-    Returns an object containing the media provides by the media id.
+    Returns an object containing the media provides by the shortcode.
 	
 ```
 {
@@ -99,7 +99,7 @@ Video Example
                 "width": 640,
                 "height": 640
             },
-  "users_in_photo": null,
+    "users_in_photo": null,
         "filter": "Vesper",
         "tags": [],
         "comments": {
@@ -157,14 +157,13 @@ Video Example
 * **Code:**
 
 ```
-media.getMedia = function(accessToken, mediaId, callback) {
-  var uri = 'https://api.instagram.com/v1/media/'+mediaId+'?access_token='+accessToken;
-  if(type) uri += '&type='+type;
-  var req = {
-      methode : 'GET',
-      uri : uri
-  }
+media.getMediaShortCode = function(accessToken, shortcode, callback) {
+    var uri = 'https://api.instagram.com/v1/media/shortcode/'+shortcode+'?access_token='+accessToken;
+    var req = {
+        methode : 'GET',
+        uri : uri
+    }
 
-  sendRequest(req, callback);
-}
+    sendRequest(req, callback);
+};
 ```

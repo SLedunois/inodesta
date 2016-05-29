@@ -13,7 +13,16 @@ var inodesta = require('../lib/main').inodesta(params);
 
 describe('#media.getMedia(accessToken, mediaId, type, callback)', function() {
     it('Returns an object containing the media provides by the media id.', function(done) {
-       inodesta.media.getMedia(params.access_token, params.media_id, "image", function(result) {
+       inodesta.media.getMedia(params.access_token, params.media_id, function(result) {
+           result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
+           done();
+       });
+    });
+});
+
+describe('#media.getMediaShortcode(accessToken, shortcode, type, callback)', function() {
+    it('Returns an object containing the media provides by the shortcode.', function(done) {
+       inodesta.media.getMediaShortCode(params.access_token, params.media_id, function(result) {
            result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
            done();
        });
