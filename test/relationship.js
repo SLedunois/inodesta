@@ -19,3 +19,12 @@ describe('#relationship.getUserSelFollow(accessToken, callback)', function() {
        });
     });
 });
+
+describe('#relationship.getUserSelFollowedBy(accessToken, callback)', function() {
+    it('Returns the list of users this user is followed by.', function(done) {
+       inodesta.relationship.getUserSelFollowedBy(params.access_token, function(result) {
+           result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
+           done();
+       });
+    });
+});
