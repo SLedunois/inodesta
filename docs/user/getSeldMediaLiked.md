@@ -1,14 +1,14 @@
-**user.getSelfRecentMedia()**
+**user.getSeldMediaLiked()**
 ----
 
 * **Method:**
   
-	Get the most recent media published by the owner of the access_token.
-    By default, returns 10 media. Set as null every optional parameter if not used.  
+	Get the list of recent media like by the owner of the access token.
+	
 *  **Parameters:**
 
 	```
-	user.getSelfRecentMedia(accessToken, count, minId, maxId, callback)
+	user.getSeldMediaLiked(accessToken, count, maxLikeId, callback)
 	```
 
    **Required:**
@@ -21,55 +21,44 @@
    
    `count=[integer]` : *Count of media to return.*
  
-   `minId=[string]` : *Returns media later than this min_id.*
- 
    `maxId=[string]` : *Returns media earlier than this max_id.*
    
 
 * **Success Response:**
 	
-    Returns an object containing the most recent media published by the owner of the access_token.
-
+    Returns an object containing the list of recent media like by the owner of the access token.
+	
 ```
 {
     "data": [{
+        "location": {
+            "id": "833",
+            "latitude": 37.77956816727314,
+            "longitude": -122.41387367248539,
+            "name": "Civic Center BART"
+        },
         "comments": {
-            "count": 0
+            "count": 16
         },
-        "caption": {
-            "created_time": "1296710352",
-            "text": "Inside le truc #foodtruck",
-            "from": {
-                "username": "kevin",
-                "full_name": "Kevin Systrom",
-                "type": "user",
-                "id": "3"
-            },
-            "id": "26621408"
-        },
+        "caption": null,
+        "link": "http://instagr.am/p/BXsFz/",
         "likes": {
-            "count": 15
+            "count": 190
         },
-        "link": "http://instagr.am/p/BWrVZ/",
-        "user": {
-            "username": "kevin",
-            "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_3_75sq_1295574122.jpg",
-            "id": "3"
-        },
-        "created_time": "1296710327",
+        "created_time": "1296748524",
         "images": {
             "low_resolution": {
-                "url": "http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_6.jpg",
+                "url": "http://distillery.s3.amazonaws.com/media/2011/02/03/efc502667a554329b52d9a6bab35b24a_6.jpg",
                 "width": 306,
                 "height": 306
             },
             "thumbnail": {
-                "url": "http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_5.jpg",
+                "url": "http://distillery.s3.amazonaws.com/media/2011/02/03/efc502667a554329b52d9a6bab35b24a_5.jpg",
                 "width": 150,
                 "height": 150
             },
             "standard_resolution": {
-                "url": "http://distillery.s3.amazonaws.com/media/2011/02/02/6ea7baea55774c5e81e7e3e1f6e791a7_7.jpg",
+                "url": "http://distillery.s3.amazonaws.com/media/2011/02/03/efc502667a554329b52d9a6bab35b24a_7.jpg",
                 "width": 612,
                 "height": 612
             }
@@ -77,14 +66,13 @@
         "type": "image",
         "users_in_photo": [],
         "filter": "Earlybird",
-        "tags": ["foodtruck"],
-        "id": "22721881",
-        "location": {
-            "latitude": 37.778720183610183,
-            "longitude": -122.3962783813477,
-            "id": "520640",
-            "street_address": "",
-            "name": "Le Truc"
+        "tags": [],
+        "id": "22987123",
+        "user": {
+            "username": "kevin",
+            "full_name": "Kevin S",
+            "profile_picture": "http://distillery.s3.amazonaws.com/profiles/profile_3_75sq_1295574122.jpg",
+            "id": "3"
         }
     },
     {
@@ -138,14 +126,14 @@
         },
         "location": null
     },
-   ]
+    ...]
 }
 ```
  
 * **Error Response:**
 	
     Returns an object containing a status code and an error.
-
+	
 ```
 {
 	"meta": {
@@ -159,18 +147,21 @@
 * **Code:**
 
 ```
-user.getSelfRecentMedia = function(accessToken, count, minId, maxId, callback) {
-	var uri = 'https://api.instagram.com/v1/users/self/media/recent/?access_token='+accessToken;
+user.getSeldMediaLiked = function(accessToken, count, maxLikeId, callback) {
+	var uri = 'https://api.instagram.com/v1/users/self/media/liked?access_token='+accessToken;
 	if(count !== null) uri += '&count='+count;
-	if(minId !== null) uri += '&min_id'+minId;
-	if(maxId !== null) uri += '&max_id'+maxId
+	if(maxLikeId !== null) uri += '&max_like_id'+maxLikeId;
 	var req = {
 		method : 'GET',
 		uri : uri
 	}
-
 	request(req, function(error, request, body) {
-		callback(JSON.parse(body));
+		if(!error){
+			callback(JSON.parse(body));
+		} else {
+			console.log(error);
+		}
 	});
 };
+
 ```

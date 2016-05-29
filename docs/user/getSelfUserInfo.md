@@ -18,6 +18,7 @@
    `callback=[function]` : *request callback.*
 
 * **Success Response:**
+	
 	Returns an object containing self user informations.
 
 ```
@@ -38,6 +39,7 @@
 ```
  
 * **Error Response:**
+
 	Returns an object containing a status code and an error.
 
 ```

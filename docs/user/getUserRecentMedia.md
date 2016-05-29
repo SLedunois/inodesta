@@ -29,7 +29,8 @@
    
 
 * **Success Response:**
-	Returns an object containing the most recent media published by the user.
+	
+    Returns an object containing the most recent media published by the user.
 	
 ```
 {
@@ -144,7 +145,8 @@
 ```
  
 * **Error Response:**
-	Returns an object containing a status code and an error.
+	
+    Returns an object containing a status code and an error.
 	
 ```
 {
