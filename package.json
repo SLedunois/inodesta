@@ -4,8 +4,8 @@
   "description": "Instagram api package ",
   "main": "lib/main.js",
   "scripts": {
-    "test": "mocha test/oAuth.js test/user.js test/relationship.js",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/oAuth.js test/user.js test/relationship.js",
+    "test": "mocha test/oAuth.js test/user.js test/relationship.js test/media.js",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/oAuth.js test/user.js test/relationship.js test/media.js",
     "deploy": "rm -rf /Users/utilisateur/node_modules/inodesta && cp -R ../inodesta /Users/utilisateur/node_modules"
   },
   "repository": {
