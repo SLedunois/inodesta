@@ -160,17 +160,15 @@
 
 ```
 user.getSelfRecentMedia = function(accessToken, count, minId, maxId, callback) {
-	var uri = 'https://api.instagram.com/v1/users/self/media/recent/?access_token='+accessToken;
-	if(count !== null) uri += '&count='+count;
-	if(minId !== null) uri += '&min_id'+minId;
-	if(maxId !== null) uri += '&max_id'+maxId
-	var req = {
-		method : 'GET',
-		uri : uri
-	}
+    var uri = 'https://api.instagram.com/v1/users/self/media/recent/?access_token='+accessToken;
+    if(count !== null) uri += '&count='+count;
+    if(minId !== null) uri += '&min_id'+minId;
+    if(maxId !== null) uri += '&max_id'+maxId
+    var req = {
+        method : 'GET',
+        uri : uri
+    };
 
-	request(req, function(error, request, body) {
-		callback(JSON.parse(body));
-	});
+    sendRequest(req, callback);
 };
 ```

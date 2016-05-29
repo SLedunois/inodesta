@@ -67,17 +67,11 @@
 
 ```
 user.search = function(accessToken, query, callback) {
-	var uri = 'https://api.instagram.com/v1/users/search?q='+query+'&access_token='+accessToken;
-	var req = {
-		method : 'GET',
-		uri : uri
-	}
-	request(req, function(error, request, body) {
-		if(!error){
-			callback(JSON.parse(body));
-		} else {
-			console.log(error);
-		}
-	});
+    var req = {
+        method : 'GET',
+        uri : 'https://api.instagram.com/v1/users/search?q='+query+'&access_token='+accessToken
+    };
+
+    sendRequest(req, callback);
 }
 ```
