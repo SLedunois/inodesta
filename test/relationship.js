@@ -37,3 +37,22 @@ describe('#relationship.getUserSelRequestedBy(accessToken, callback)', function(
        });
     });
 });
+
+describe('#relationship.getUserRelationship(accessToken, userId, callback)', function() {
+    it("Returns information about provided user's relationship.", function(done) {
+       inodesta.relationship.getUserRelationship(params.access_token, params.user_id, function(result) {
+           result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
+           done();
+       });
+    });
+});
+
+
+describe('#relationship.postUserRelationship(accessToken, userId, action, callback)', function() {
+    it("Returns an object containing the current status of the request.", function(done) {
+       inodesta.relationship.postUserRelationship(params.access_token, params.user_id, 'follow',function(result) {
+           result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
+           done();
+       });
+    });
+});

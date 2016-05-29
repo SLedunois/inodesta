@@ -4,7 +4,7 @@
   "description": "Instagram api package ",
   "main": "lib/main.js",
   "scripts": {
-    "test": "mocha test/*.js",
+    "test": "chmod 777 ./bin/tests && ./bin/tests",
     "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*.js",
     "deploy": "rm -rf /Users/utilisateur/node_modules/inodesta && cp -R ../inodesta /Users/utilisateur/node_modules"
   },

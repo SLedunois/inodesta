@@ -1,0 +1,14 @@
+echo "=============="
+echo "TESTING OAUTH"
+echo "=============="
+mocha "test/oAuth.js"
+
+echo "=============="
+echo "TESTING USER"
+echo "=============="
+mocha "test/user.js"
+
+echo "====================="
+echo "TESTING RELATIONSHIP"
+echo "====================="
+mocha "test/relationship.js"
