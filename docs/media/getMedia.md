@@ -20,13 +20,7 @@
 
    `mediaId=[string]` : *a valid media id.*
    
-   `callback=[function]` : *request callback.*
-
-   **Optionals:**
-  
-  `type=[string]` : *a valid media type.*
-
-   
+   `callback=[function]` : *request callback.*   
 
 * **Success Response:**
 	
