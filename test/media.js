@@ -28,3 +28,12 @@ describe('#media.getMediaShortcode(accessToken, shortcode, type, callback)', fun
        });
     });
 });
+
+describe('#media.search(accessToken, lat, lng, distance, callback)', function() {
+    it('Returns an object containing the list of medias.', function(done) {
+       inodesta.media.search(params.access_token, null, null, null, function(result) {
+           result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
+           done();
+       });
+    });
+});
