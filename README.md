@@ -8,4 +8,4 @@ Instagram nodeJS API Package
 
 ## Easy to use
 
-Inodesta is designed to be the simplest way possible to use Instagram api.
+Inodesta is designed to be the simplest way possible to use Instagram api. 
