@@ -148,20 +148,15 @@
 
 ```
 user.getSeldMediaLiked = function(accessToken, count, maxLikeId, callback) {
-	var uri = 'https://api.instagram.com/v1/users/self/media/liked?access_token='+accessToken;
-	if(count !== null) uri += '&count='+count;
-	if(maxLikeId !== null) uri += '&max_like_id'+maxLikeId;
-	var req = {
-		method : 'GET',
-		uri : uri
-	}
-	request(req, function(error, request, body) {
-		if(!error){
-			callback(JSON.parse(body));
-		} else {
-			console.log(error);
-		}
-	});
+    var uri = 'https://api.instagram.com/v1/users/self/media/liked?access_token='+accessToken;
+    if(count !== null) uri += '&count='+count;
+    if(maxLikeId !== null) uri += '&max_like_id'+maxLikeId;
+    var req = {
+        method : 'GET',
+        uri : uri
+    };
+
+    sendRequest(req, callback);
 };
 
 ```

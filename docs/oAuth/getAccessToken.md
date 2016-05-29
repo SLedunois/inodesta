@@ -48,19 +48,17 @@
 ```
 oAuth.getAccessToken = function(code, callback){
 	var req = {
-		method: 'POST',
-		uri: 'https://api.instagram.com/oauth/access_token',
-		form: {
-			client_id : <client_id>,
-			client_secret : <client_secret>,
-			grant_type : "authorization_code",
-			redirect_uri : <redirect_uri>,
-			code : code
-		}
-	};
+        method: 'POST',
+        uri: 'https://api.instagram.com/oauth/access_token',
+        form: {
+            client_id : params.client_id,
+            client_secret : params.client_secret,
+            grant_type : "authorization_code",
+            redirect_uri : "http://localhost:3000/oAuth",
+            code : code
+        }
+    };
 
-	request(req, function(error, request, body) {
-		callback(JSON.parse(body));
-	});
+    sendRequest(req, callback);
 };
 ```

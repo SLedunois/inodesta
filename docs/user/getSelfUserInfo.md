@@ -59,10 +59,8 @@ user.getSelfUserInfo = function(accessToken, callback) {
 	var req = {
 		method : 'GET',
 		uri : 'https://api.instagram.com/v1/users/self/?access_token='+accessToken
-	}
+  	};
 
-	request(req, function(error, request, body) {
-		callback(JSON.parse(body));
-	});
+    sendRequest(req, callback);
 };
 ```
