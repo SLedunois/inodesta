@@ -28,3 +28,12 @@ describe('#relationship.getUserSelFollowedBy(accessToken, callback)', function()
        });
     });
 });
+
+describe('#relationship.getUserSelRequestedBy(accessToken, callback)', function() {
+    it("Returns the List of users who have requested this user's permission to follow.", function(done) {
+       inodesta.relationship.getUserSelRequestedBy(params.access_token, function(result) {
+           result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
+           done();
+       });
+    });
+});
