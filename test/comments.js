@@ -28,3 +28,12 @@ describe('#comments.getMediaComment(accessToken, mediaId, comment, callback)', f
        });
     });
 });
+
+describe('#comments.deleteMediaComment(accessToken, mediaId, comment, callback)', function() {
+    it('Returns an object containing the request status.', function(done) {
+       inodesta.comments.deleteMediaComment(params.access_token, params.media_id, '123456789', function(result) {
+           result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
+           done();
+       });
+    });
+});
