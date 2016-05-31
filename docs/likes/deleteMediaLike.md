@@ -1,15 +1,17 @@
-**comments.deleteMediaComment()**
+**likes.deleteMediaLike()**
 ----
 
 * **Method:**
   
 	
-  Remove a comment either on the authenticated user's media object or authored by the authenticated user.
-	
+Remove a like on this media by the currently authenticated user. 
+
+The public_content permission scope is required to delete likes on a media that does not belong to the owner of the access_token.
+
 *  **Parameters:**
 
 	```
-	comments.deleteMediaComment(accessToken, mediaId, commentId, callback)
+	likes.deleteMediaLike(accessToken, mediaId, callback)
 	```
 
    **Required:**
@@ -18,8 +20,6 @@
 
    `mediaId=[string]` : *a valid media id.*
 
-   `commentId=[string]` : *a valid comment id*
-   
    `callback=[function]` : *request callback.*   
 
 * **Success Response:**
@@ -52,10 +52,10 @@
 * **Code:**
 
 ```
-comments.deleteMediaComment = function(accessToken, mediaId, commentId, callback) {
+likes.deleteMediaLike = function(accessToken, mediaId, callback) {
     var req = {
         method: 'DELETE',
-        uri: 'https://api.instagram.com/v1/media/'+mediaId+'/comments/'+commentId+'?access_token='+accessToken,
+        uri: 'https://api.instagram.com/v1/media/'+mediaId+'/likes?access_token='+accessToken,
     };
 
     sendRequest(req, callback);

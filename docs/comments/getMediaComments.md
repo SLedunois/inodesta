@@ -1,4 +1,4 @@
-**media.getMedia()**
+**comments.getMedia()**
 ----
 
 * **Method:**
