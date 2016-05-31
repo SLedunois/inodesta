@@ -62,7 +62,7 @@
 * **Code:**
 
 ```
-.comments.getMediaComments = function(accessToken, mediaId, callback) {
+comments.getMediaComments = function(accessToken, mediaId, callback) {
     var req = {
         methode : 'GET',
         uri : 'https://api.instagram.com/v1/media/'+mediaId+'/comments?access_token='+accessToken

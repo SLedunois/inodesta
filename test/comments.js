@@ -19,3 +19,12 @@ describe('#comments.getMediaComments(accessToken, mediaId, callback)', function(
        });
     });
 });
+
+describe('#comments.getMediaComment(accessToken, mediaId, comment, callback)', function() {
+    it('Returns an object containing the request status.', function(done) {
+       inodesta.comments.postMediaComment(params.access_token, params.media_id, 'This is a comment.', function(result) {
+           result.should.be.type('object').have.property('meta').have.property('code', params.returned_status_code);
+           done();
+       });
+    });
+});
