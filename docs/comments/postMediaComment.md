@@ -1,4 +1,4 @@
-**media.postMediaComment()**
+**comments.postMediaComment()**
 ----
 
 * **Method:**
