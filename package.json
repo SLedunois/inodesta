@@ -1,6 +1,6 @@
 {
   "name": "inodesta",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Instagram api package ",
   "main": "lib/main.js",
   "scripts": {
