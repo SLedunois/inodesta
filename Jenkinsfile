@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('install packages') {
       steps {
-        sh '''echo "$USER"
-npm install'''
+        sh 'npm install'
       }
     }
     stage('Cover') {
