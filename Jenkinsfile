@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('install packages') {
       steps {
-        sh 'npm install'
+        sh '''export PATH=/usr/local/bin/npm:$PATH
+npm install'''
       }
     }
     stage('Cover') {
